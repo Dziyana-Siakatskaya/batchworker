@@ -15,15 +15,24 @@
 		<json.version>20090211</json.version>
 		<mysql.version>5.1.9</mysql.version>
 		<jdk.version>1.7</jdk.version>
-		<spring.batch.version>2.2.0.RELEASE</spring.batch.version>
+		<spring.batch.version>3.0.4.RELEASE</spring.batch.version>
 	</properties>
 
 	<dependencies>
-		<dependency>
+
+	
+	
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-batch</artifactId>
 			<version>1.2.4.RELEASE</version>
-		</dependency>
+			<exclusions>
+				<exclusion>
+					<artifactId>log4j-over-slf4j</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency> -->
 		<!-- Spring dependencies -->
 		<!-- ORM integration, e.g Hibernate -->
 		<dependency>
@@ -146,12 +155,42 @@
 			<version>1.0.0.RELEASE</version>
 		</dependency>
 
+
+		<!-- Spring Jsbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- Spring XML to/back object -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-oxm</artifactId>
-			<version>3.0.0.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
-		<!-- logging -->
+		
+		
+
+		<!-- Spring Batch dependencies -->
+		 <dependency>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-core</artifactId>
+			<version>${spring.batch.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-infrastructure</artifactId>
+			<version>${spring.batch.version}</version>
+		</dependency> 
+
+		 <dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.8</version>
+		</dependency>
+
+
 	</dependencies>
 
 

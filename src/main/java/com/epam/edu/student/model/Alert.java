@@ -1,5 +1,9 @@
 package com.epam.edu.student.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "alert")
 public class Alert {
 	public Alert() {
 
@@ -13,10 +17,8 @@ public class Alert {
 	}
 
 	public Alert(String string, int alertTypeId) {
-
 		this.alertTypeId = alertTypeId;
-		this.alertMessage = string;
-		System.out.println(this.alertTypeId + " " + this.alertMessage);
+		this.alertMessage = string;		
 	}
 
 	Integer id;
@@ -24,6 +26,7 @@ public class Alert {
 	String alertMessage;
 	Integer alertPosted;
 
+	@XmlElement(name = "id")
 	public Integer getId() {
 		return id;
 	}
@@ -32,6 +35,7 @@ public class Alert {
 		this.id = id;
 	}
 
+	@XmlElement(name = "alertTypeId")
 	public Integer getAlertTypeId() {
 		return alertTypeId;
 	}
@@ -40,6 +44,7 @@ public class Alert {
 		this.alertTypeId = alertTypeId;
 	}
 
+	@XmlElement(name = "alertMessage")
 	public String getAlertMessage() {
 		return alertMessage;
 	}
@@ -48,6 +53,7 @@ public class Alert {
 		this.alertMessage = alertMessage;
 	}
 
+	@XmlElement(name = "alertPosted")
 	public Integer getAlertPosted() {
 		return alertPosted;
 	}
