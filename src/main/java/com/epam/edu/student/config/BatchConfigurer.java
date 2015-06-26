@@ -17,12 +17,12 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.epam.edu.student.job.DPtoXMLJob;
+import com.epam.edu.student.job.DBtoXMLJob;
 
 @Configuration
 @EnableBatchProcessing
 @EnableTransactionManagement
-@Import(DPtoXMLJob.class)
+@Import(DBtoXMLJob.class)
 @ComponentScan("com.epam.edu.student")
 public class BatchConfigurer {
 	// private static final Logger LOG =

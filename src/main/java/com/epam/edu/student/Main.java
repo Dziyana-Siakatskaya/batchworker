@@ -18,9 +18,8 @@ public class Main {
 	public static void main(String[] args) {
 		Main main = new Main();
 		try {
-			main.run2(args);
+			main.run2();
 		} catch (NoSuchJobException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -34,7 +33,7 @@ public class Main {
 	 * }
 	 */
 
-	private void run2(String[] args) throws NoSuchJobException {
+	private void run2() throws NoSuchJobException {
 
 		JobLauncher jobLauncher = (JobLauncher) ANNOTATION_CONFIG_APPLICATION_CONTEXT
 				.getBean("jobLauncher");
@@ -46,7 +45,7 @@ public class Main {
 			// JobParametersBuilder().toJobParameters();
 			JobExecution execution = jobLauncher.run(testRead,
 					new JobParameters());
-			execution.setVersion(2);
+			//execution.setVersion(2);
 			LOG.info("Exit Status : " + execution.getStatus());
 			LOG.info("Exit Status : " + execution.getAllFailureExceptions());
 		} catch (Exception e) {
