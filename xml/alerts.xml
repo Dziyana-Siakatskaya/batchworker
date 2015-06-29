@@ -1,99 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<record>
-	<alerts>
+<alerts>
+	<alert>
 		<alertMessage>TEST1</alertMessage>
 		<alertPosted>1</alertPosted>
 		<alertTypeId>1</alertTypeId>
 		<id>1</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST2</alertMessage>
 		<alertPosted>1</alertPosted>
 		<alertTypeId>1</alertTypeId>
 		<id>2</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST3</alertMessage>
 		<alertPosted>1</alertPosted>
 		<alertTypeId>1</alertTypeId>
 		<id>3</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST4</alertMessage>
 		<alertPosted>1</alertPosted>
 		<alertTypeId>1</alertTypeId>
 		<id>4</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST5</alertMessage>
 		<alertPosted>1</alertPosted>
 		<alertTypeId>1</alertTypeId>
 		<id>5</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST6</alertMessage>
 		<alertPosted>1</alertPosted>
 		<alertTypeId>1</alertTypeId>
 		<id>6</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST7</alertMessage>
 		<alertPosted>0</alertPosted>
 		<alertTypeId>1</alertTypeId>
 		<id>7</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST8</alertMessage>
 		<alertPosted>0</alertPosted>
 		<alertTypeId>1</alertTypeId>
 		<id>8</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST21</alertMessage>
 		<alertPosted>0</alertPosted>
 		<alertTypeId>2</alertTypeId>
 		<id>9</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST22</alertMessage>
 		<alertPosted>0</alertPosted>
 		<alertTypeId>2</alertTypeId>
 		<id>10</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST23</alertMessage>
 		<alertPosted>0</alertPosted>
 		<alertTypeId>2</alertTypeId>
 		<id>11</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST24</alertMessage>
 		<alertPosted>0</alertPosted>
 		<alertTypeId>2</alertTypeId>
 		<id>12</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST25</alertMessage>
 		<alertPosted>0</alertPosted>
 		<alertTypeId>2</alertTypeId>
 		<id>13</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST26</alertMessage>
 		<alertPosted>0</alertPosted>
 		<alertTypeId>2</alertTypeId>
 		<id>14</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST27</alertMessage>
 		<alertPosted>0</alertPosted>
 		<alertTypeId>2</alertTypeId>
 		<id>15</id>
-	</alerts>
-	<alerts>
+	</alert>
+	<alert>
 		<alertMessage>TEST28</alertMessage>
 		<alertPosted>0</alertPosted>
 		<alertTypeId>2</alertTypeId>
 		<id>16</id>
-	</alerts>
-</record>
+	</alert>
+</alerts>

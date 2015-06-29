@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "alerts")
+@XmlRootElement(name = "alert")
 public class Alerts implements Serializable {
 	/**
 	 * 

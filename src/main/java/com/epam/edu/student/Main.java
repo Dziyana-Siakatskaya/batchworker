@@ -4,11 +4,13 @@ import org.apache.log4j.Logger;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.JobParameters;
+import org.springframework.batch.core.JobParametersBuilder;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.launch.NoSuchJobException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.epam.edu.student.config.BatchConfigurer;
+
 
 public class Main {
 	private static final AnnotationConfigApplicationContext ANNOTATION_CONFIG_APPLICATION_CONTEXT = new AnnotationConfigApplicationContext(
@@ -38,14 +40,14 @@ public class Main {
 		JobLauncher jobLauncher = (JobLauncher) ANNOTATION_CONFIG_APPLICATION_CONTEXT
 				.getBean("jobLauncher");
 		Job testRead = (Job) ANNOTATION_CONFIG_APPLICATION_CONTEXT
-				.getBean("testRead");
-
+				.getBean("getAlertOnType");
+		
 		try {
-			// JobParameters param = new
-			// JobParametersBuilder().toJobParameters();
+			JobParameters param = new JobParametersBuilder().addLong("alertTypeId", (long) 2).addLong("alertCount", (long) 3).toJobParameters();
+			
 			JobExecution execution = jobLauncher.run(testRead,
-					new JobParameters());
-			//execution.setVersion(2);
+					param);
+			execution.setVersion(2);
 			LOG.info("Exit Status : " + execution.getStatus());
 			LOG.info("Exit Status : " + execution.getAllFailureExceptions());
 		} catch (Exception e) {
