@@ -23,8 +23,7 @@ import com.epam.edu.student.job.DBtoXMLJob;
 @Configuration
 @EnableBatchProcessing
 @EnableTransactionManagement
-@Import(DBtoXMLJob.class)
-@ComponentScan("com.epam.edu.student")
+//@Import(DBtoXMLJob.class)
 public class BatchConfigurer {
 	// private static final Logger LOG =
 	// Logger.getLogger(BatchConfigurer.class);

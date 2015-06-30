@@ -1,14 +1,13 @@
-package com.epam.edu.student.rowmapper;
+package com.epam.edu.student.job.rowmapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Component;
 
 import com.epam.edu.student.model.Alerts;
 
-@Component(value = "rowMapper")
+//@Component(value = "rowMapper")
 public class AlertRowMapper implements RowMapper<Alerts> {
 	//private static final Logger LOG = Logger.getLogger(AllertRowMapper.class);
 

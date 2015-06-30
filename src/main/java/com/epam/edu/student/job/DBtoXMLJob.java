@@ -27,9 +27,9 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.oxm.Marshaller;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
+import com.epam.edu.student.job.processor.AlertsItemProcessor;
+import com.epam.edu.student.job.rowmapper.AlertRowMapper;
 import com.epam.edu.student.model.Alerts;
-import com.epam.edu.student.processor.AlertsItemProcessor;
-import com.epam.edu.student.rowmapper.AlertRowMapper;
 
 @Configuration
 public class DBtoXMLJob {
@@ -79,6 +79,32 @@ public class DBtoXMLJob {
 		return reader;
 	}
 
+	@Bean
+	public ItemWriter<Alerts> jsonWriter() {
+		StaxEventItemWriter<Alerts> writer = new StaxEventItemWriter<Alerts>();
+		writer.setResource(new FileSystemResource("xml/alerts.xml"));
+		writer.setRootTagName("alerts");
+		writer.setMarshaller(myMarshaller());
+
+		// FlatFileItemWriter<Alerts> writer = new FlatFileItemWriter<Alerts>();
+		// writer.setResource(new FileSystemResource("xml/alert.csv"));
+		// writer.setShouldDeleteIfExists(true);
+		//
+		// BeanWrapperFieldExtractor<Alerts> fieldExtractor = new
+		// BeanWrapperFieldExtractor<Alerts>();
+		// fieldExtractor.setNames(new String[] { "id", "alertTypeId",
+		// "alertMessage", "alertPosted" });
+		// DelimitedLineAggregator<Alerts> delLineAgg = new
+		// DelimitedLineAggregator<Alerts>();
+		// delLineAgg.setDelimiter("-");
+		// delLineAgg.setFieldExtractor(fieldExtractor);
+		//
+		// writer.setLineSeparator(",");
+		// writer.setLineAggregator(delLineAgg);
+
+		return writer;
+	}
+	
 	@Bean
 	public ItemWriter<Alerts> writer() {
 		StaxEventItemWriter<Alerts> writer = new StaxEventItemWriter<Alerts>();
@@ -137,11 +163,11 @@ public class DBtoXMLJob {
 	}
 
 	@Bean
-	public Step getAlertOnTypeStep(ItemReader<Alerts> getAlertOnTypeRead)
+	public Step getAlertOnTypeStep(ItemReader<Alerts> getAlertOnTypeRead, ItemWriter<? super Alerts> jsonWriter)
 			throws Exception {
 		return stepBuilderFactory.get("getAlertOnTypeStep")
 				.<Alerts, Alerts> chunk(5).reader(getAlertOnTypeRead)
-				.processor(processor()).writer(writer()).faultTolerant()
+				.processor(processor()).writer(jsonWriter).faultTolerant()
 				.build();
 	}
 

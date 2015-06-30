@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE logback>
+<configuration>
+  <!-- <statusListener class="ch.qos.logback.core.status.NopStatusListener" /> -->
+	<appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>\t ==> %d{HH:mm:ss} %5p %15c{1} %7M \t %m%n </Pattern>
+        </encoder>
+	</appender>	
+	<logger name="org.springframework" level="info"/>   
+    <logger name="org.hibernate" level="warn"/>   
+    <logger name="jdbc" level="warn"/>  
+    <logger name="jdbc.sqlonly" level="warn"/>   
+    <logger name="jdbc.resultsettable" level="warn"/> 
+    <logger name="ch.qos.logback.classic.LoggerContext[default]" level="warn"/> 
+    
+	<root level="debug">
+        <appender-ref ref="Console" />
+	</root>	
+</configuration>

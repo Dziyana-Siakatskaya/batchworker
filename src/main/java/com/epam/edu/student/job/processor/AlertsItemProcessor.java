@@ -1,4 +1,4 @@
-package com.epam.edu.student.processor;
+package com.epam.edu.student.job.processor;
 
 import org.springframework.batch.item.ItemProcessor;
 
