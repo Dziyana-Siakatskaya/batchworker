@@ -20,6 +20,8 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.oxm.Marshaller;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
+import RestTemplateReader.RestTemplateWriter;
+
 import com.epam.edu.student.job.processor.RestTemplateProcessor;
 import com.epam.edu.student.job.reader.RestTemplateReader;
 import com.epam.edu.student.model.Alerts;
@@ -45,37 +47,15 @@ public class RestTemplateRequestJob {
 
 	@Bean(name = "restTemplateWriter")
 	public ItemWriter<Alerts> writer() {
-		LOG.debug("Alerts writer ");
-		StaxEventItemWriter<Alerts> writer = new StaxEventItemWriter<Alerts>();
-		writer.setResource(new FileSystemResource("xml/alerts.xml"));
-		writer.setRootTagName("alerts");
-		writer.setMarshaller(myMarshaller());
-
-		// FlatFileItemWriter<Alerts> writer = new FlatFileItemWriter<Alerts>();
-		// writer.setResource(new FileSystemResource("xml/alert.csv"));
-		// writer.setShouldDeleteIfExists(true);
-		//
-		// BeanWrapperFieldExtractor<Alerts> fieldExtractor = new
-		// BeanWrapperFieldExtractor<Alerts>();
-		// fieldExtractor.setNames(new String[] { "id", "alertTypeId",
-		// "alertMessage", "alertPosted" });
-		// DelimitedLineAggregator<Alerts> delLineAgg = new
-		// DelimitedLineAggregator<Alerts>();
-		// delLineAgg.setDelimiter("-");
-		// delLineAgg.setFieldExtractor(fieldExtractor);
-		//
-		// writer.setLineSeparator(",");
-		// writer.setLineAggregator(delLineAgg);
-		
-		return writer;
+		return new RestTemplateWriter();
 	}
 
-	@Bean
+	/*@Bean
 	public Marshaller myMarshaller() {
 		Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
 		marshaller.setClassesToBeBound(Alerts.class);
 		return marshaller;
-	}
+	}*/
 
 	@Bean(name = "restTemplateProcessor")
 	public ItemProcessor<Alerts, Alerts> processor() {

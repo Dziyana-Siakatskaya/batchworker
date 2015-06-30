@@ -1,1 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><alerts><alert><alertMessage>test21processed</alertMessage><alertPosted>0</alertPosted><alertTypeId>2</alertTypeId><id>9</id></alert><alert><alertMessage>test22processed</alertMessage><alertPosted>0</alertPosted><alertTypeId>2</alertTypeId><id>10</id></alert><alert><alertMessage>test23processed</alertMessage><alertPosted>0</alertPosted><alertTypeId>2</alertTypeId><id>11</id></alert></alerts>
+<?xml version="1.0" encoding="UTF-8"?>
+<alerts>
+	<alert>
+		<alertMessage>test21processed</alertMessage>
+		<alertPosted>0</alertPosted>
+		<alertTypeId>2</alertTypeId>
+		<id>9</id>
+	</alert>
+	<alert>
+		<alertMessage>test22processed</alertMessage>
+		<alertPosted>0</alertPosted>
+		<alertTypeId>2</alertTypeId>
+		<id>10</id>
+	</alert>
+	<alert>
+		<alertMessage>test23processed</alertMessage>
+		<alertPosted>0</alertPosted>
+		<alertTypeId>2</alertTypeId>
+		<id>11</id>
+	</alert>
+</alerts>

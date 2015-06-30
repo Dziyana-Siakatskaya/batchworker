@@ -5,6 +5,9 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 @XmlRootElement(name = "alert")
 public class Alerts implements Serializable {
 	/**
@@ -64,6 +67,17 @@ public class Alerts implements Serializable {
 				+ alertPosted + "]";
 	}
 	
-	
+	public JSONObject getJSON() {
+		JSONObject jsonObject = new JSONObject();
+		try {
+			jsonObject.accumulate("id", id);
+			jsonObject.accumulate("alertTypeId", alertTypeId);
+			jsonObject.accumulate("alertMessage", alertMessage);
+			jsonObject.accumulate("alertPosted", alertPosted);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return jsonObject;
+	}
 
 }

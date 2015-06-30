@@ -85,8 +85,6 @@ public class RestTemplateReader implements ItemReader<Alerts> {
 				.build().encode().toUri(), HttpMethod.POST, entity,
 				Alerts[].class);
 		alerts = serverResponse.getBody();
-		for (Alerts temp : serverResponse.getBody())
-			System.out.println(temp.toString());
 	}
 
 }
