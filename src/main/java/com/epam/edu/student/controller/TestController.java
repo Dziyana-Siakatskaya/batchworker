@@ -26,7 +26,7 @@ public class TestController {
 
 	@RequestMapping(value = "/*", method = RequestMethod.GET)
 	public String index() {
-		JobParameters params = new JobParametersBuilder().addLong("alertTypeId",(long) 2).addLong("alertCount", (long) 3).toJobParameters();
+		JobParameters params = new JobParametersBuilder().addLong("time",System.currentTimeMillis()).addLong("alertTypeId",(long) 2).addLong("alertCount", (long) 3).toJobParameters();
 		try {
 			jobLauncher.run(restTemplateJob, params);
 		} catch (JobExecutionAlreadyRunningException | JobRestartException

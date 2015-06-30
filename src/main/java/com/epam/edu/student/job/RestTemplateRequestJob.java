@@ -29,6 +29,19 @@ import com.epam.edu.student.model.Alerts;
 @Configuration
 public class RestTemplateRequestJob {
 	private static final Logger LOG = Logger.getLogger(DBtoXMLJob.class);
+	// ==> 09:52:56 WARN ConfigurationClassEnhancer intercept @Bean method
+	// ScopeConfiguration.jobScope is non-static and returns an object
+	// assignable to Spring's BeanFactoryPostProcessor interface. This will
+	// result in a failure to process annotations such as @Autowired, @Resource
+	// and @PostConstruct within the method's declaring @Configuration class.
+	// Add the 'static' modifier to this method to avoid these container
+	// lifecycle issues; see @Bean javadoc for complete details
+	
+	// ==> 09:52:56 WARN AbstractListenerFactoryBean isListener
+	// org.springframework.batch.item.ItemReader is an interface. The
+	// implementing class will not be queried for annotation based listener
+	// configurations. If using @StepScope on a @Bean method, be sure to return
+	// the implementing class so listner annotations can be used.
 
 	@Autowired
 	DataSource myDataSource;
